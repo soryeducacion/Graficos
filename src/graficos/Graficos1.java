@@ -51,16 +51,16 @@ public class Graficos1 extends JFrame {
         ventana.add(btncalcular);      
         ventana.add(result);
 
-        btncalcular.addActionListener(new java.awt.event.ActionListener() {
+        btncalcular.addActionListener(new java.awt.event.ActionListener() { //tipo de evento, al dar click en el componente 
             @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) { // metodo del evento
                 btncalcularActionPerformed(evt);
             }
         });   
         
-        btncalcular.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        btncalcular.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() { // tipo de evento, al posicionar el maouse sobre el componente
             @Override
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
+            public void mouseMoved(java.awt.event.MouseEvent evt) { // metodo del evento
                 btncalcularActionPerformed2(evt);
             }
         });
