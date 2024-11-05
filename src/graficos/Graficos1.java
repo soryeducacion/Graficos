@@ -70,7 +70,6 @@ public class Graficos1 extends JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) { // metodo del evento
                 btncalcularActionPerformed(evt);
                 btncalcularResta(evt);
-                btncalcularResta(evt);
             }
         });   
         
