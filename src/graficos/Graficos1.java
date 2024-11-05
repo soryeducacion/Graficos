@@ -16,7 +16,7 @@ import java.awt.event.MouseEvent;
  * @author soryl
  */
 public class Graficos1 extends JFrame {
-    
+    // componentes suma
     private JLabel result;
     private JLabel label1;
     private JLabel label2;
@@ -24,11 +24,17 @@ public class Graficos1 extends JFrame {
     private JTextField dato1;
     private JTextField dato2;
     private JButton btncalcular;
+    
+    //componenentes Resta
+    private JLabel resultResta;
+    private JLabel label1Multiplicacion;
+    private JLabel label2Division;
+
 
     public Graficos1() {
         setTitle("Operaciones Básicas"); //titulo de la ventana
-             // alto ancho
-        setSize(550, 300); //tamaño de ventana
+             // ancho alto
+        setSize(380, 300); //tamaño de ventana
         setLocationRelativeTo(null); //centrar la ventana
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // funcion terminar la ejecución al cerrar la ventana
         //componenetes
@@ -36,6 +42,10 @@ public class Graficos1 extends JFrame {
         label1 = new JLabel("Valor 1");
         label2 = new JLabel("Valor 2");
         labelresta = new JLabel("Valor 1");
+        
+        label1Multiplicacion = new JLabel("Multiplicación");
+        labelresta = new JLabel("Resta");
+        label2Division = new JLabel("División");
                 
         dato1 = new JTextField(5);
         dato2 = new JTextField(5);
@@ -50,11 +60,17 @@ public class Graficos1 extends JFrame {
         ventana.add(dato2);
         ventana.add(btncalcular);      
         ventana.add(result);
+        
+        ventana.add(labelresta);
+        ventana.add(label1Multiplicacion);
+        ventana.add(label2Division);
 
         btncalcular.addActionListener(new java.awt.event.ActionListener() { //tipo de evento, al dar click en el componente 
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) { // metodo del evento
                 btncalcularActionPerformed(evt);
+                btncalcularResta(evt);
+                btncalcularResta(evt);
             }
         });   
         
@@ -72,6 +88,13 @@ public class Graficos1 extends JFrame {
         int v2 = Integer.parseInt(dato2.getText());
         int re = v1+v2;
         result.setText("Resultado: " + re);
+    }
+    
+     private void btncalcularResta(ActionEvent evt) {
+        int v1 = Integer.parseInt(dato1.getText()); 
+        int v2 = Integer.parseInt(dato2.getText());
+        int re = v1-v2;
+        labelresta.setText("Resultado: " + re);
     }
     
     private void btncalcularActionPerformed2(MouseEvent evt) {
