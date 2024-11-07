@@ -25,10 +25,12 @@ public class Graficos1 extends JFrame {
     private JTextField dato2;
     private JButton btncalcular;
     
-    //componenentes Resta
+    //componenentes 
     private JLabel resultResta;
     private JLabel label1Multiplicacion;
     private JLabel label2Division;
+    
+    private JLabel labelTitle;
 
 
     public Graficos1() {
@@ -37,6 +39,9 @@ public class Graficos1 extends JFrame {
         setSize(380, 300); //tamaño de ventana
         setLocationRelativeTo(null); //centrar la ventana
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // funcion terminar la ejecución al cerrar la ventana
+        labelTitle = new JLabel("Operaciones Básicas");
+        labelTitle.setFont(new Font("Tahoma", 1, 18));
+        labelTitle.setForeground(new java.awt.Color(51, 51, 255));
         //componenetes
         result = new JLabel("Resultado");
         label1 = new JLabel("Valor 1");
@@ -70,15 +75,18 @@ public class Graficos1 extends JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) { // metodo del evento
                 btncalcularActionPerformed(evt);
                 btncalcularResta(evt);
+                btncalcularMulti(evt);
+                btncalcularDivision(evt);
             }
+            
         });   
         
-        btncalcular.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() { // tipo de evento, al posicionar el maouse sobre el componente
+        /*btncalcular.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() { // tipo de evento, al posicionar el maouse sobre el componente
             @Override
             public void mouseMoved(java.awt.event.MouseEvent evt) { // metodo del evento
                 btncalcularActionPerformed2(evt);
             }
-        });
+        });*/
          
     }
     
@@ -86,21 +94,28 @@ public class Graficos1 extends JFrame {
         int v1 = Integer.parseInt(dato1.getText()); 
         int v2 = Integer.parseInt(dato2.getText());
         int re = v1+v2;
-        result.setText("Resultado: " + re);
+        result.setText("Suma: " + re);
     }
     
      private void btncalcularResta(ActionEvent evt) {
         int v1 = Integer.parseInt(dato1.getText()); 
         int v2 = Integer.parseInt(dato2.getText());
         int re = v1-v2;
-        labelresta.setText("Resultado: " + re);
+        labelresta.setText("Resta: " + re);
     }
     
-    private void btncalcularActionPerformed2(MouseEvent evt) {
+    private void btncalcularDivision(ActionEvent evt) {
         int v1 = Integer.parseInt(dato1.getText()); 
         int v2 = Integer.parseInt(dato2.getText());
-        int re = v1+v2;
-        result.setText("Resultado Mouse: " + re);
+        int re = v1/v2;
+        label2Division.setText("División: " + re);
+    }
+    
+    private void btncalcularMulti(ActionEvent evt) {
+        int v1 = Integer.parseInt(dato1.getText()); 
+        int v2 = Integer.parseInt(dato2.getText());
+        int re = v1*v2;
+        label1Multiplicacion.setText("Multiplicación: " + re);
     }
     
     public static void main(String[] args) {
