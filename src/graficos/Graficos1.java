@@ -50,6 +50,7 @@ public class Graficos1 extends JFrame {
         
         label1Multiplicacion = new JLabel("Multiplicación");
         labelresta = new JLabel("Resta");
+        labelresta.setBackground(Color.red);
         label2Division = new JLabel("División");
                 
         dato1 = new JTextField(5);
@@ -108,6 +109,7 @@ public class Graficos1 extends JFrame {
         int v1 = Integer.parseInt(dato1.getText()); 
         int v2 = Integer.parseInt(dato2.getText());
         int re = v1/v2;
+        
         label2Division.setText("División: " + re);
     }
     
